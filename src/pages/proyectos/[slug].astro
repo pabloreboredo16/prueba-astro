@@ -1,7 +1,9 @@
 ---
 import { render } from 'astro:content';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets'; 
 import Baselayout from '../../layouts/Baselayout.astro';
+import ImagenProyecto from '../../components/ImagenProyecto.astro';
 
 export async function getStaticPaths() {
     const proyectos = await getCollection("proyectos");
@@ -17,5 +19,9 @@ const {Content} = await render(proyecto);
 <Baselayout>
 <h1>{proyecto.data.titulo}</h1>
 <p>{proyecto.data.autor} - {proyecto.data.descripcion}</p>
+
+
+
+<p>#{proyecto.data.tags?.join(', #')}</p>
 <Content/>
 </Baselayout>

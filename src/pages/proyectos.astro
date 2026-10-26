@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets"; 
 import Baselayout from "../layouts/Baselayout.astro";
 
 const proyectos = await getCollection('proyectos');
@@ -7,8 +8,32 @@ const proyectos = await getCollection('proyectos');
 <Baselayout>
     <h1>Lista de Proyectos</h1>
     <ul>
-        {proyectos.map(proyecto => <li>
-            <a href={`/proyectos/${proyecto.id}`}>{proyecto.data.titulo}</a>
+        {proyectos.map(proyecto => 
+            <li>
+                {proyecto.data.imagen && 
+                <Image 
+                    src={proyecto.data.imagen} 
+                    alt={proyecto.data.titulo} 
+                    width={100}
+                    height={100} 
+                />}
+                <a href={`/proyectos/${proyecto.id}`}>{proyecto.data.titulo}</a>
             </li>)}
     </ul>
 </Baselayout>
+
+<style>
+    li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+</style>

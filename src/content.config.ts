@@ -20,10 +20,11 @@ const proyectos = defineCollection({
       pattern: ['**/*.md', '**/*.mdx'], 
       base: './src/content/proyectos'
   }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
       titulo: z.string(),
       descripcion: z.string(),
       autor: z.string(),
+      imagen: image(), 
       tags: z.array(z.string()).optional()
   })
 });

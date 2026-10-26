@@ -2,23 +2,18 @@
 titulo: "Planificador de Tareas"
 descripcion: "Planificador de tareas"
 autor: "Pablo Reboredo"
+imagen: ../../assets/planificador.PNG
 tags: ["planificador", "tareas", "prueba"]
 ---
 
 import RatingStars from "../../components/RatingStars.jsx";
-
-import { Image } from 'astro:assets';
-import miCaptura from "../../assets/planificador.PNG";
+import ImagenProyecto from "../../components/ImagenProyecto.astro";
+import fotoPlan from "../../assets/planificador.PNG";
 
 <br />
+
 Proyecto de práctica de un planificador de tareas con gestor de dificultad segun la duracion de las tareas.
 
-<br />
+<ImagenProyecto src={fotoPlan} alt="Planificador" />
 
-<Image 
-  src={miCaptura} 
-  alt="Captura del Planificador de Tareas" 
-  style={{ width: '100%', maxWidth: '500px', height: 'auto', borderRadius: '8px', margin: '1rem 0' }} 
-/>
-
-<RatingStars client:load projectId="ejemplo" />
+<RatingStars client:load projectId="plan" />

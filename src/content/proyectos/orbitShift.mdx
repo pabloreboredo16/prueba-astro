@@ -2,16 +2,20 @@
 titulo: "Orbit Shift"
 descripcion: "Juego móvil."
 autor: "Pablo Reboredo"
+imagen: ../../assets/orbitShift.PNG
 tags: ["juego", "movil"]
 ---
 
 import RatingStars from "../../components/RatingStars.jsx";
-
-import { Image } from 'astro:assets';
-import miCaptura from "../../assets/orbitShift.PNG";
+import ImagenProyecto from "../../components/ImagenProyecto.astro";
+import fotoOrbit from "../../assets/orbitShift.PNG";
 
 <br />
+
 **Orbit Shift** es un juego arcade cyberpunk en **HTML5 + Canvas** con **JavaScript Vanilla**. Controla dos esferas (azul y roja) que orbitan un eje central y esquiva bloques que caen desde arriba.
+
+<ImagenProyecto src={fotoOrbit} alt="Orbit Shift" />
+
 <br />
 
 ## 🎮 Mecánica
@@ -26,6 +30,4 @@ Cada bloque esquivado suma **1 metro de distancia**.
 
 Velocidad de caída aumenta progresivamente hasta un tope máximo.
 
-<Image src={miCaptura} alt="Captura Orbit Shift" />
-
-<RatingStars client:load projectId="ejemplo" />
+<RatingStars client:load projectId="orbit" />
