@@ -1,0 +1,22 @@
+---
+const { href = "/index2", texto = "tocame" } = Astro.props;
+---
+
+<a href={href} class="btn">{texto}</a>
+
+<style>
+    .btn {
+        display: inline-block;
+        background: #6366f1;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background: #4f46e5;
+    }
+</style>

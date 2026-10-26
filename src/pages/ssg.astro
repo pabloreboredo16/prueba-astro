@@ -1,0 +1,16 @@
+---
+// SSG: La pagina se renderiza cuando se hace el build 
+// Los productos son los mismos siempre
+import Baselayout from "../layouts/Baselayout.astro";
+
+const productos = ['Portatil', 'Raton', 'Teclado']
+const fechaHora = new Date().toLocaleString('es-ES')
+---
+<Baselayout>
+    <h1>Lista de productos usando SSG</h1>
+    <p>Fecha y Hora: {fechaHora}</p>
+    <span>Esta fecha se calcula cuando ocurre el build</span>
+    <ul>
+        {productos.map(p => <li>{p}</li>)}
+    </ul>
+</Baselayout>

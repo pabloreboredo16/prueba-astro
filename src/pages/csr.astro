@@ -1,0 +1,26 @@
+---
+// CSR: La pagina se renderiza en el cliente 
+import Baselayout from "../layouts/Baselayout.astro";
+---
+<Baselayout>
+    <h1>Lista de productos usando CSR</h1>
+    <p>Fecha y Hora: <span id="fechaHora"></span></p>
+    <ul id="lista"></ul>
+</Baselayout>
+
+<script>
+    function cargarDatos() {
+        const productos = ['Falda', 'Pnatalon', 'Calcetines']
+        const lista = document.getElementById("lista")
+        productos.forEach(p => {
+            const li = document.createElement('li')
+            lista?.appendChild(li)
+            li.textContent = p
+        })
+        const fechaHora = document.getElementById('fechaHora')
+        if (fechaHora) {
+            fechaHora.textContent = new Date().toLocaleString('es-ES')
+        } 
+    }
+    cargarDatos()
+</script>

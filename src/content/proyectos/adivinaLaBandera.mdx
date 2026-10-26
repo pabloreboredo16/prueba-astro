@@ -1,0 +1,34 @@
+---
+titulo: "Adivina La Bandera"
+descripcion: "Juego deplegado en GitHub para adivinar banderas de disitntos paises."
+autor: "Pablo Reboredo"
+tags: ["juego", "banderas", "geografia"]
+---
+
+import RatingStars from "../../components/RatingStars.jsx";
+
+import { Image } from 'astro:assets';
+import miCaptura from "../../assets/adivinaLaBandera.PNG";
+
+<br />
+
+Un juego interactivo de preguntas y respuestas en JavaScript donde debes adivinar a qué país pertenece la bandera mostrada.
+
+<br />
+
+## 🎮 Mecánica
+
+**Carga de banderas:** Al iniciar, el juego obtiene los datos de banderas y nombres de países de forma dinámica.
+
+**Elige una opción:** Se muestra una bandera al azar junto a 4 opciones posibles .
+
+**Feedback:** 
+Si aciertas, el botón se marca en **verde** con el mensaje ¡Correcto!
+
+Si fallas, el botón seleccionado se muestra en **rojo** con la respuesta correcta.
+
+**Siguiente ronda:** Haz clic en el botón **"Siguiente bandera"** para continuar con un nuevo país sin repetir los anteriores hasta completar la lista.
+
+<Image src={miCaptura} alt="Captura Adivina La Bandera" />
+
+<RatingStars client:load projectId="ejemplo" />

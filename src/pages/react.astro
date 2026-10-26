@@ -1,0 +1,10 @@
+---
+import Baselayout from "../layouts/Baselayout.astro";
+import ContadorReact from "../components/ContadorReact";
+---
+<Baselayout>
+    <h1>Contador usando react js/ts</h1>
+    <ContadorReact client:load></ContadorReact>
+</Baselayout>
+
+<script src="/scripts/contador.ts" defer/>

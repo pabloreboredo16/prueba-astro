@@ -1,0 +1,52 @@
+---
+import Card from "../components/Card.astro";
+import Menu from "../components/Menu.astro";
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mi Web en Astro</title>
+    </head>
+    <body>
+        <header>
+            <Menu/>
+        </header>
+
+        <main class="container">
+            <Card>
+                <slot/>
+            </Card>
+        </main>
+    </body>
+</html>
+
+<style is:global>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background-color: #f8fafc; /* Fondo claro de la pantalla */
+        color: #0f172a;            /* Texto principal en tono oscuro */
+        padding: 2rem 1rem;
+        min-height: 100vh;
+    }
+
+    header {
+        max-width: 600px;
+        margin: 0 auto 1.5rem auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+</style>

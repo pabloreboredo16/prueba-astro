@@ -1,0 +1,49 @@
+---
+
+---
+
+<nav class="nav-menu">
+    <a href="/">Pagina 1</a>
+    <a href="/index2">Pagina 2</a>
+    <a href="/ssr">SSR</a>
+    <a href="/ssg">SSG</a>
+    <a href="/csr">CSR</a>
+    <a href="/estilos">Estilos</a>
+    <a href="/vanilla">Vanilla</a>
+    <a href="/react">React</a>
+    <a href="/blog">Blog</a>
+    <a href="/proyectos">Proyectos</a>
+</nav>
+
+<style>
+    .nav-menu {
+        display: flex;
+        gap: 0.25rem; /* Reducimos ligeramente el espacio entre elementos */
+        align-items: center;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        padding: 0.4rem 0.6rem;
+        border-radius: 9999px;
+        border: 1px solid #e2e8f0;
+        width: fit-content;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-menu a {
+        color: #64748b;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.65rem;
+        border-radius: 9999px;
+        transition: all 0.2s ease;
+        
+        /* EVITA QUE EL TEXTO SE SEPARE EN DOS LÍNEAS */
+        white-space: nowrap; 
+    }
+
+    .nav-menu a:hover {
+        color: #0f172a;
+        background: #f1f5f9;
+    }
+</style>

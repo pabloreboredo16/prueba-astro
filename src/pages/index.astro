@@ -1,0 +1,26 @@
+---
+import Baselayout from "../layouts/Baselayout.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const nombre = "Pablo";
+const favoritos = ["Comer", "Dormir", "Programar"];
+---
+
+<Baselayout>
+    <h1>Mi primera página de Astro</h1>
+    <p class="subtitle">Yo me llamo <span>{nombre}</span></p>
+
+    <Card titulo="Hobbies">
+        <ul>
+            {favoritos.map((favorito) => <li>{favorito}</li>)}
+        </ul>
+    </Card>
+    <Card titulo="Perfil de Yuri da Souza" imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5aRwPVjP_KVeboe0XuJ4HOTV0zuLq6RLWeG0OtGJ6oA&s=10">
+        <p>SD Ponferradina - 197 goles</p>
+        <p>UD Las Palmas - 0 goles</p>
+        <p>Pontevedra CF - 56 goles</p>
+    </Card>
+
+    <Button href="/index2" texto="Pulsa para ir a la segunda pagina" />
+</Baselayout>

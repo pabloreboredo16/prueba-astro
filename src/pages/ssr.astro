@@ -1,0 +1,18 @@
+---
+// SSR: La pagina se renderiza en el servidor 
+// Los productos cambian en tiempo real
+import Baselayout from "../layouts/Baselayout.astro";
+
+export const prerender = false // Esto activa el SSR
+
+const productos = ['Manzanas', 'Peras', 'Platanos']
+const fechaHora = new Date().toLocaleString('es-ES')
+---
+<Baselayout>
+    <h1>Lista de productos usando SSR</h1>
+    <p>Fecha y Hora: {fechaHora}</p>
+    <span>Esta fecha es la del servidor en tiempo real</span>
+    <ul>
+        {productos.map(p => <li>{p}</li>)}
+    </ul>
+</Baselayout>
