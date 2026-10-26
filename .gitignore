@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 # config visual
 .vscode/
+
+# Agents
+AGENTS.md
+CLAUDE.md
