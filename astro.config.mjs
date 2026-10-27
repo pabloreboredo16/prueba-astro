@@ -7,6 +7,8 @@ import react from '@astrojs/react';
 
 import mdx from '@astrojs/mdx';
 
+import vercel from '@astrojs/vercel';
+
 // https://astro.build/config
 export default defineConfig({
   server: {
@@ -22,5 +24,6 @@ export default defineConfig({
     enabled: false
   },
 
-  integrations: [react(), mdx()]
+  integrations: [react(), mdx()],
+  adapter: vercel()
 });
