@@ -1,0 +1,15 @@
+---
+import tecnologias from "../content/tecnologias.json"
+import Baselayout from "../layouts/Baselayout.astro";
+---
+
+<Baselayout>
+<h1>Listado de tecnologías</h1>
+<ul>
+    {tecnologias.map ( tecnologia => (
+        <li>
+            {tecnologia.nombre} - <em>{tecnologia.nivel}</em>
+        </li>
+    ) )}
+</ul>
+</Baselayout>

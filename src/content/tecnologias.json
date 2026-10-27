@@ -1,0 +1,6 @@
+[
+    {"id": 1, "nombre": "HTML y CSS","nivel": "alto"},
+    {"id": 2, "nombre": "Java","nivel": "alto"},
+    {"id": 3, "nombre": "Javascript","nivel": "basico"},
+    {"id": 4, "nombre": "Python","nivel": "basico"}
+]
