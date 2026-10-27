@@ -1,7 +1,8 @@
 ---
 import Baselayout from "../layouts/Baselayout.astro";
+import { GET } from "./api/hora.js";
 
-const res = await fetch(new URL("/api/hora", Astro.url))
+const res = await GET()
 const datos = await res.json()
 
 ---
