@@ -1,5 +1,6 @@
 ---
 import Baselayout from "../layouts/Baselayout.astro";
+export const prerender = false
 
 const res = await fetch("https://api.coinpaprika.com/v1/tickers/btc-bitcoin")
 if(!res.ok){
@@ -9,7 +10,6 @@ const datos = await res.json()
 const precioBitcoin = datos.quotes.USD.price
 const precioBitcoinFormateado = precioBitcoin.toFixed(2)
 
-export const prerender = false // Esto activa el SSR para que la informacion se actualice en tiempo real
 ---
 
 <Baselayout>

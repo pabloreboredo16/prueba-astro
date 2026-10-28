@@ -1,6 +1,7 @@
 ---
 import Baselayout from "../layouts/Baselayout.astro";
 import { GET } from "./api/hora.js";
+export const prerender = false
 
 const res = await GET()
 const datos = await res.json()

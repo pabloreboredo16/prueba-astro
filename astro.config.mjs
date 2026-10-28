@@ -25,7 +25,5 @@ export default defineConfig({
   },
 
   integrations: [react(), mdx()],
-  adapter: vercel(),
-  // Cambia la configuracion por defecto de SSG a SSR
-  // output: "server"
+  adapter: vercel()
 });
