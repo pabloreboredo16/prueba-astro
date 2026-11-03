@@ -24,20 +24,24 @@ import Menu from "../components/Menu.astro";
 </html>
 
 <style is:global>
+
+    /* TODO */
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
 
+    /* BODY */
     body {
         font-family: system-ui, -apple-system, sans-serif;
-        background-color: #f8fafc; /* Fondo claro de la pantalla */
-        color: #0f172a;            /* Texto principal en tono oscuro */
+        background-color: #f8fafc; 
+        color: #0f172a;           
         padding: 2rem 1rem;
         min-height: 100vh;
     }
 
+    /* HEADER */
     header {
         max-width: 600px;
         margin: 0 auto 1.5rem auto;
@@ -45,8 +49,27 @@ import Menu from "../components/Menu.astro";
         justify-content: center;
     }
 
+    /* CONTAINER */
     .container {
         max-width: 600px;
         margin: 0 auto;
+    }
+
+    /* TABLAS */
+    .tabla-base {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+    }
+    .tabla-base th, 
+    .tabla-base td {
+        padding: 10px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    .tabla-base th {
+        background-color: #f8fafc;
+        color: #475569;
+        font-weight: bold;
     }
 </style>

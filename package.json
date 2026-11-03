@@ -9,7 +9,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down",
+    "db:destroy": "docker compose down -v",
+    "db:restart": "docker compose restart mysql_astro",
+    "db:logs": "docker compose logs -f mysql_astro",
+    "db:ps": "docker compose ps",
+    "db:sql": "docker compose exec -it mysql_astro mysql -uroot -p",
+    "db:shell": "docker compose exec -it mysql_astro sh"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.5",
@@ -21,6 +29,7 @@
     "@types/react-dom": "^19.3.0",
     "astro": "^7.3.2",
     "flowbite": "^4.0.2",
+    "mysql2": "^3.24.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "tailwindcss": "^4.3.3"
