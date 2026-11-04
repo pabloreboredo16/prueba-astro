@@ -16,6 +16,11 @@ try {
 
 <Baselayout>
     <h1>Lista de productos añadidos a una Base de Datos</h1>
+    <form class="crear-prod">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required/>
+        <input type="number" id="precio" name="precio" placeholder="Precio" required/>
+        <button type="submit" class="boton-crear">Añadir producto</button>
+    </form>
     <div>
         <table class="tabla-base">
             <thead>
@@ -23,6 +28,7 @@ try {
                     <th>ID</th>
                     <th>NOMBRE</th>
                     <th>PRECIO</th>
+                    <th>ELIMINAR PRODUCTO</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,9 +37,40 @@ try {
                         <td>{producto.id}</td>
                         <td>{producto.nombre}</td>
                         <td>{producto.precio}</td>
+                        <td>
+                            <button data-id={producto.id} class="boton-borrar">Eliminar</button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
         </table>
     </div>
 </Baselayout>
+
+<script>
+    import { actions } from "astro:actions";
+
+    // Añadir producto con su precio
+    document.addEventListener("submit", añadir)
+    async function añadir(event) {
+        if(!event.target.classList.contains("crear-prod")) return;
+
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const nombre = String(formData.get("nombre"));
+        const precio = Number(formData.get("precio"));
+        await actions.productAdd({nombre:nombre, precio:precio})
+        window.location.reload();
+    }
+
+    // Borrar producto por id
+    document.addEventListener("click", borrar)
+    async function borrar(event) {
+        if(!event.target.classList.contains("boton-borrar")) return;
+
+        const id_borrar=Number(event.target.dataset.id)
+        await actions.productDelete({id:id_borrar})
+        window.location.reload();
+        }
+</script>

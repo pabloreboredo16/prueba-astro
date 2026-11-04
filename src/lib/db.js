@@ -17,9 +17,24 @@ function getPool() {
     return pool
 }
 
+// Obtener productos
 export async function getAllProducts() {
     const [productos] = await getPool().query(
         'SELECT id, nombre, precio FROM productos ORDER BY id'
     )
     return productos
+}
+
+// Borrar productos por su id
+export async function deleteProduct(id) {
+    await getPool().query(
+        'DELETE FROM productos WHERE id = ?', [id]
+    )
+}
+
+// Añadir un producto con su precio
+export async function addProduct(nombre, precio) {
+    await getPool().query(
+        'INSERT INTO productos(nombre, precio) VALUES (?, ?)', [nombre, precio]
+    )
 }
